@@ -22,7 +22,8 @@ pipeline {
                 
                 sh 'npm i -s'
               
-                sh 'npm install karma-firefox-launcher --save-dev'
+                sh 'npm install karma-firefox-launcher --save-dev --link'
+                sh 'npm install karma-chrome-launcher --save-dev --link'
               
                 sh 'npm run cibuild'
             }
