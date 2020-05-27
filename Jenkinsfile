@@ -12,6 +12,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+                sh 'sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb'
                 sh 'npm i --loglevel silent'
                 sh 'npm cache clean --force'
                 sh 'npm install --save core-js@^3'
