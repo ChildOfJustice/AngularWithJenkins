@@ -24,6 +24,8 @@ pipeline {
               
                 sh 'npm install karma-firefox-launcher --save-dev'
                 sh 'npm install karma-chrome-launcher --save-dev'
+                sh 'npm install --save-dev karma-phantomjs-launcher'
+                sh 'karma start --browsers PhantomJS_custom'
               
                 sh 'npm run cibuild'
             }
