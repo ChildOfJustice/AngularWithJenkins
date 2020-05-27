@@ -12,7 +12,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'apt-get update'
+                sh 'apt-get -y install sudo'
+                
                 sh 'wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+                sh 'sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb'
+                
                 
                 sh 'npm i --loglevel silent'
                 sh 'npm cache clean --force'
@@ -22,6 +27,9 @@ pipeline {
                 sh 'npm install node-sass@latest'
                 
                 sh 'npm i -s'
+              
+                sh 'npm install karma-firefox-launcher --save-dev'
+              
                 sh 'npm run cibuild'
             }
         }
