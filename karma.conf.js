@@ -6,11 +6,6 @@ module.exports = function (config) {
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
-      new webpack.DefinePlugin({
-          'process.env': {
-              NO_PROXY: 'localhost, 0.0.0.0/4201, 0.0.0.0/9876'
-          },
-      }),
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
