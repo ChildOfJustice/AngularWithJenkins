@@ -1,11 +1,6 @@
 
 pipeline {
-    agent {
-         docker {
-            image 'node:latest' 
-            args '-p 3000:3000 --privileged' 
-        }
-    }
+    agent { dockerfile true }
     environment { 
         CI = 'true'
         PATH="/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin"
