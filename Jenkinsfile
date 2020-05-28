@@ -6,6 +6,7 @@ pipeline {
         PATH="/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin"
         CHROME_BIN= "/usr/bin/google-chrome"
         NO_PROXY = "localhost, 0.0.0.0/4201, 0.0.0.0/9876"
+        JENKINS_HOME = "/home/sardor/Desktop/DEVELOPMENT/Working_with_Father/Angular_Project/JenkinsHome"
     }
     stages {
         stage('Build') {
@@ -29,14 +30,14 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'chmod +x /jenkins/scripts/test.sh'
-                sh './jenkins/scripts/test.sh'
+                sh '/jenkins/scripts/test.sh'
             }
         }
         stage('Deliver') { 
             steps {
-                sh './jenkins/scripts/deliver.sh' 
+                sh '/jenkins/scripts/deliver.sh' 
                 input message: 'Finished using the web site? (Click "Proceed" to continue)' 
-                sh './jenkins/scripts/kill.sh' 
+                sh '/jenkins/scripts/kill.sh' 
             }
         }
     }
