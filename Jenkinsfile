@@ -7,8 +7,8 @@ pipeline {
         }
     }
     environment { 
-        CI = 'true',
-        PATH="/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin",
+        CI = 'true'
+        PATH="/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin"
         CHROME_BIN= "/usr/bin/google-chrome"
     }
     stages {
