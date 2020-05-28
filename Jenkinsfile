@@ -3,7 +3,6 @@ pipeline {
     agent { dockerfile true }
     environment { 
         CI = 'true'
-        PATH="/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin"
         CHROME_BIN= "/usr/bin/google-chrome"
         NO_PROXY = "localhost, 0.0.0.0/4201, 0.0.0.0/9876"
         JENKINS_HOME = "/home/sardor/Desktop/DEVELOPMENT/Working_with_Father/Angular_Project/JenkinsHome"
