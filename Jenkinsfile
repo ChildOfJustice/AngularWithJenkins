@@ -7,7 +7,9 @@ pipeline {
         }
     }
     environment { 
-        CI = 'true'
+        CI = 'true',
+        PATH="/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin",
+        CHROME_BIN= "/usr/bin/google-chrome"
     }
     stages {
         stage('Build') {
@@ -22,9 +24,7 @@ pipeline {
                 
                 sh 'npm i -s'
               
-                sh 'npm install karma-firefox-launcher --save-dev'
                 sh 'npm install karma-chrome-launcher --save-dev'
-                sh 'npm install --save-dev karma-phantomjs-launcher'
               
                 sh 'npm run cibuild'
             }
