@@ -26,6 +26,8 @@ pipeline {
               
                 sh 'npm install karma-chrome-launcher --save-dev'
               
+                sh 'npm install --save-dev webpack'
+              
                 sh 'npm run cibuild'
             }
         }
