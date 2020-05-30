@@ -22,7 +22,7 @@ pipeline {
                 sh 'npm install karma-chrome-launcher --save-dev'
                 sh 'npm i --save-dev puppeteer'
               
-                sh 'npm run cibuild'
+                
             }
         }
         stage('Test') {
