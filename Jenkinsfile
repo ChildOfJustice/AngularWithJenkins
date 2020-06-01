@@ -50,11 +50,11 @@ pipeline {
                 sh 'ls'
                 sh 'sudo apt-get install yum'
                 sh 'yum install httpd'
-                //sh "chmod +x ./jenkins/scripts/deliver.sh"
-                //sh './jenkins/scripts/deliver.sh'
+                sh "chmod +x ./jenkins/scripts/deliver.sh"
+                sh './jenkins/scripts/deliver.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)' 
-                //sh "chmod +x ./jenkins/scripts/kill.sh"
-                //sh './jenkins/scripts/kill.sh'
+                sh "chmod +x ./jenkins/scripts/kill.sh"
+                sh './jenkins/scripts/kill.sh'
             }
         }
     }
