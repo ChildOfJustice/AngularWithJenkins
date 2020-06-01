@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-sudo cd /var/www/html
+cd /var/www/html
 sudo git init
 sudo git clone https://github.com/ChildOfJustice/AngularWithJenkins.git
 sudo cp -R ./AngularWithJenkins/dist/mixTestApp/* /var/www/html/
