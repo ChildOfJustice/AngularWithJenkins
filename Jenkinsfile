@@ -48,7 +48,7 @@ pipeline {
             }
             steps {
                 sh 'ls'
-                sh 'sudo apt-get install yum'
+                sh 'sudo apt-get install yum -y'
                 sh 'yum install httpd'
                 sh "chmod +x ./jenkins/scripts/deliver.sh"
                 sh './jenkins/scripts/deliver.sh'
