@@ -48,8 +48,7 @@ pipeline {
             }
             steps {
                 sh 'ls'
-                sh 'sudo yum -y install httpd'
-                sh 'yum install httpd'
+                sh 'sudo apt-get install apache2 -y'
                 sh "chmod +x ./jenkins/scripts/deliver.sh"
                 sh './jenkins/scripts/deliver.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)' 
