@@ -28,7 +28,8 @@ pipeline {
               
                 sh 'npm install karma-chrome-launcher --save-dev'
                 sh 'npm i --save-dev puppeteer'
-              
+                
+                sh 'ng build —prod —build-optimizer'
                 
             }
         }
