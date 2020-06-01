@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
 echo 'Terminating...'
-sudo service httpd stop
+sudo /etc/init.d/apache2 stop
