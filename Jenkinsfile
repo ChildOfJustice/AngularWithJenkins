@@ -2,12 +2,19 @@ pipeline {
     agent { dockerfile true }
     environment { 
         CI = 'true'
+        
         CHROME_BIN= "/usr/bin/google-chrome"
         NO_PROXY = "localhost, 0.0.0.0/4201, 0.0.0.0/9876"
-        JENKINS_HOME = "/home/sardor/Desktop/DEVELOPMENT/Working_with_Father/Angular_Project/JenkinsHome"
+      //ALL STAGES:
+      BUILD = 'false'
+      TEST = 'false'
+      DELIVER = 'true'
     }
     stages {
         stage('Build') {
+            when {
+              environment name: 'BUILD', value: 'true' 
+            }
             steps {
                 
                 sh 'npm i --loglevel silent'
@@ -26,12 +33,18 @@ pipeline {
             }
         }
         stage('Test') {
+            when {
+              environment name: 'TEST', value: 'true' 
+            }
             steps {
               sh "chmod +x ./jenkins/scripts/test.sh"
               sh './jenkins/scripts/test.sh'
             }
         }
         stage('Deliver') { 
+            when {
+              environment name: 'DELIVER', value: 'true' 
+            }
             steps {
                 sh "chmod +x ./jenkins/scripts/deliver.sh"
                 sh './jenkins/scripts/deliver.sh'
