@@ -58,9 +58,9 @@ pipeline {
                 //sh 'sudo apt-get install apache2 -y'
                 sh "chmod +x ./jenkins/scripts/deliver.sh"
                 sh './jenkins/scripts/deliver.sh'
-                //input message: 'Finished using the web site? (Click "Proceed" to continue)' 
-                //sh "chmod +x ./jenkins/scripts/kill.sh"
-                //sh './jenkins/scripts/kill.sh'
+                input message: 'Finished using the web site? (Click "Proceed" to continue)' 
+                sh "chmod +x ./jenkins/scripts/kill.sh"
+                sh './jenkins/scripts/kill.sh'
             }
         }
     }
